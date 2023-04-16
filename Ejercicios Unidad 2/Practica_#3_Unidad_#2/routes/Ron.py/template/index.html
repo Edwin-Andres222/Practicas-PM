@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../templates/static/index.css">
+</head>
+<body>
+    <h1>Lista de Ron en existencia</h1>
+    <div>
+        <a href="{{url_for('appRon.agregar')}}">Agregar Ron</a>
+    </div>
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Marca</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for Ron in Rons%}
+                <tr>
+                    <td>{{Ron.id}}</td>
+                    <td>{{Ron.Marca}}</td>
+                    <td><a href="detalle/{{Ron.id}}">Detalle</a></td>
+                    <td><a href="editar/{{Ron.id}}">Editar</a></td>
+                    <td><a href="eliminar/{{Ron.id}}">Eliminar</a></td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
