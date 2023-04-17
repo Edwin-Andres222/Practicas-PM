@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Lista de comentarios</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <br/>
+    <a class="btnMio" href="{% url 'index' %}">Regresar</a>
+    
+    <div class="contenido">
+        <h1>Seccion de comentarios sobre la Tienda</h1>
+
+        <a href="nuevo_comentario" class="btnMio">Hacer nuevo comentario</a>
+        <table class="tablaMio" border="1">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Autor</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for comentario in comentarios %}
+                <tr>
+                    <td>{{comentario.id}}</td>
+                    <td>{{comentario.autor}}</td>
+                    <td><a href="detalle_comentario/{{comentario.id}}" class="btnMio" style="background: rgba(59, 59, 196, 0.466);">Detalles</a></td>
+                    <td><a href="editar_comentario/{{comentario.id}}" class="btnMio" style="background: rgba(88, 204, 88, 0.445);">Editar</a></td>
+                    <td><a href="eliminar_comentario/{{comentario.id}}" class="btnMio" style="background: rgba(199, 77, 77, 0.473);">Eliminar</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table><br/>
+    </div>
+</body>
+</html></html>

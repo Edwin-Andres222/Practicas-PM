@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Editar persona</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <br/><a class="btnMio" href="{% url 'usuarioList' %}" >Regresar</a>
+
+    <div class="formContainer">
+        <div class="formRight">
+            <form method="POST" class="formio">
+                <h1>Editar usuario</h1>
+        
+                <table class="tableMio">
+                    {{formaUsuario}}
+                </table>
+        
+                <button type="submit" id="btnEditar" class="btnMio">Guardar cambios</button>
+                {% csrf_token %}
+            </form>
+        </div>
+    </div>
+</body>
+</html>

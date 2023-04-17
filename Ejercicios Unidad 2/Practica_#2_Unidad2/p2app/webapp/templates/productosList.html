@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Lista de productos</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <br/>
+    <a class="btnMio" href="{% url 'index' %}">Regresar</a>
+    
+    <div class="contenido">
+        <h1>Sistema gestor de productos</h1>
+
+        <a href="nuevo_producto" class="btnMio">Crear producto</a>
+        <table class="tablaMio" border="1">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for producto in productos %}
+                <tr>
+                    <td>{{producto.id}}</td>
+                    <td>{{producto.nombre}}</td>
+                    <td>${{producto.precio}}</td>
+                    <td><a href="detalle_producto/{{producto.id}}" class="btnMio" style="background: rgba(59, 59, 196, 0.384);">Detalles</a></td>
+                    <td><a href="editar_producto/{{producto.id}}" class="btnMio" style="background: rgba(88, 204, 88, 0.473);">Editar</a></td>
+                    <td><a href="eliminar_producto/{{producto.id}}" class="btnMio" style="background: rgba(199, 77, 77, 0.425);">Eliminar</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table><br/>
+    </div>
+</body>
+</html></html>

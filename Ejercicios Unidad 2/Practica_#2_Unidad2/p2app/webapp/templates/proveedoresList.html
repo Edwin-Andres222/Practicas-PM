@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Lista de Proveedores</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <br/>
+    <a class="btnMio" href="{% url 'index' %}">Regresar</a>
+    
+    <div class="contenido">
+        <h1>Gestion de Proveedores de la Tienda</h1>
+
+        <a href="nuevo_proveedor" class="btnMio">Añadir Proveedor</a>
+        <table class="tablaMio" border="1">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Correo electronico</th>
+                    <th>Compañia</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for proveedor in proveedores %}
+                <tr>
+                    <td>{{proveedor.id}}</td>
+                    <td>{{proveedor.nombre}} {{proveedor.apellido}}</td>
+                    <td>{{proveedor.email}}</td>
+                    <td>{{proveedor.compania}}</td>
+                    <td><a href="detalle_proveedor/{{proveedor.id}}" class="btnMio" style="background: rgba(59, 153, 196, 0.555);">Detalles</a></td>
+                    <td><a href="editar_proveedor/{{proveedor.id}}" class="btnMio" style="background: rgba(187, 204, 88, 0.623);">Editar</a></td>
+                    <td><a href="eliminar_proveedor/{{proveedor.id}}" class="btnMio" style="background: rgba(199, 77, 77, 0.404);">Eliminar</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table><br/>
+    </div>
+</body>
+</html></html>

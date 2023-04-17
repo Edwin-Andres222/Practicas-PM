@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Nueva categoria</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+   <br/> <a class="btnMio" href="{% url 'categoriaList' %}">Regresar</a>
+
+    <div class="formContainer">
+        <div class="formRight">
+            <form method="POST" class="formio">
+                <h1>Agregar categoria</h1>
+        
+                <table>
+                    {{formaCategoria}}
+                </table>
+        
+                <button type="submit" id="btnCrear" class="btnMio">Crear</button>
+                {% csrf_token %}
+            </form>
+        </div>
+    </div>
+</body>
+</html>
