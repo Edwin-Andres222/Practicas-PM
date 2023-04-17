@@ -4,7 +4,7 @@ log.basicConfig(level=log.DEBUG,
     format="%(asctime)s: %(levelname)s [%(filename)s]:%(lineno)s %(message)s",
     datefmt='%I:%M:%S %p',
     handlers=[
-        log.FileHandler('./Practica_#1_Unidad_#2/capa_datos.log'),
+        log.FileHandler('capa_datos.log'),
         log.StreamHandler()
     ])
 

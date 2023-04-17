@@ -1,5 +1,4 @@
 from Persona import Persona
-from Conexion import Conexion
 from cursorDelPool import CursorDelPool
 from logger_base import log
 class PersonaDao:
@@ -36,7 +35,7 @@ class PersonaDao:
     @classmethod
     def eliminar(cls,persona):
         with CursorDelPool() as cursor:
-            valores = (persona.idPersona,)
+            valores = (persona.idPersona)
             cursor.execute(cls._ELIMINAR,valores)
             return cursor.rowcount
 
@@ -47,7 +46,7 @@ if __name__ == "__main__":
     personasInsertadas = PersonaDao.insertar(persona1)
     log.debug(f"Personas insertadas {personasInsertadas}")
     #Actualizar
-    persona1 = Persona(id_persona=2,nombre="Pancrasio",apellido="Mendez",email="pmendez@mail.com",edad=23)
+    persona1 = Persona(id_persona=1,nombre="Pancrasio",apellido="Mendez",email="pmendez@mail.com",edad=23)
     personasActualizadas = PersonaDao.actualizar(persona1)
     log.debug(f"Personas actualizadas {personasActualizadas}")
     #eliminar
