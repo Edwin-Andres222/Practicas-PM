@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Editar comentario</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <br/><a class="btnMio" href="{% url 'comentarioList' %}" >Regresar</a>
+
+    <div class="formContainer">
+        <div class="formRight">
+            <form method="POST" class="formio">
+                <h1>Editar comentario</h1>
+        
+                <table class="tableMio">
+                    {{formaComentario}}
+                </table>
+        
+                <button type="submit" id="btnEditar" class="btnMio">Guardar cambios</button>
+                {% csrf_token %}
+            </form>
+        </div>
+    </div>
+</body>
+</html>
