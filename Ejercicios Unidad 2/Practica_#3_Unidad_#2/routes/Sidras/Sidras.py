@@ -8,10 +8,10 @@ appSidras = Blueprint('appSidras',__name__,template_folder="templates")
 def agregarSidras():
     try:
         json = request.get_json()
-        Sidras = Sidras()
-        Sidras.Nombre = json['Nombre']
-        Sidras.Precio = json['Precio']
-        db.session.add(Sidras)
+        sidras = Sidras()
+        sidras.Nombre = json['Nombre']
+        sidras.Precio = json['Precio']
+        db.session.add(sidras)
         db.session.commit()
         return jsonify({"status":200, "mensaje":"Sidras agregado"})
     except Exception as ex:
@@ -21,9 +21,9 @@ def agregarSidras():
 def editarSidras():
     try:
         json = request.get_json()
-        Sidras = Sidras.query.get_or_404(json['id'])
-        Sidras.Nombre = json['Nombre']
-        Sidras.Precio = json['Precio']
+        sidras = sidras.query.get_or_404(json['id'])
+        sidras.Nombre = json['Nombre']
+        sidras.Precio = json['Precio']
         db.session.commit()
         return jsonify({'status':"OK",'mensaje':"Sidras modificado"})
     except Exception as ex:
@@ -33,8 +33,8 @@ def editarSidras():
 def eliminarSidras():
     try:
         json = request.get_json()
-        Sidras = Sidras.query.get_or_404(json['id'])
-        db.session.delete(Sidras)
+        sidras = sidras.query.get_or_404(json['id'])
+        db.session.delete(sidras)
         db.session.commit()
         return jsonify({'status':"OK",'mensaje':"Sidras eliminado"})
     except Exception as ex:
@@ -42,11 +42,11 @@ def eliminarSidras():
 
 @appSidras.route('/Sidras/obtener',methods={"GET"})
 def obtenerSidrass():
-    Sidrass = Sidras.query.all()
+    sidras = sidras.query.all()
     listaSidrass=[]
-    for p in Sidrass:
-        Sidras = {}
-        Sidras["Nombre"] = p.nombre
-        Sidras["Precio"] = p.precio
-        listaSidrass.append(Sidras)
+    for p in sidras:
+        sidras = {}
+        sidras["Nombre"] = p.nombre
+        sidras["Precio"] = p.precio
+        listaSidrass.append(sidras)
     return jsonify({'Sidras':listaSidrass})

@@ -1,0 +1,18 @@
+07:38:13 PM: ERROR [commits.py]:27 no existe la relación «cliente»
+LINE 1: INSERT INTO cliente(nombre,apellido,email) Values('Juan','Pe...
+                    ^
+
+07:38:13 PM: ERROR [commits.py]:47 no existe la relación «cliente»
+LINE 1: INSERT INTO cliente(nombre,apellido,email) Values('Juan','Pe...
+                    ^
+
+07:39:18 PM: ERROR [commits.py]:27 el valor nulo en la columna «id_persona» de la relación «persona» viola la restricción de no nulo
+DETAIL:  La fila que falla contiene (null, Juan, Perez, jperez@gmail.com, null).
+
+07:39:18 PM: ERROR [commits.py]:47 el valor nulo en la columna «id_persona» de la relación «persona» viola la restricción de no nulo
+DETAIL:  La fila que falla contiene (null, Juan, Perez, jperez@gmail.com, null).
+
+07:40:50 PM: ERROR [commits.py]:27 not all arguments converted during string formatting
+07:40:50 PM: ERROR [commits.py]:47 el valor nulo en la columna «id_persona» de la relación «persona» viola la restricción de no nulo
+DETAIL:  La fila que falla contiene (null, Juan, Perez, jperez@gmail.com, null).
+

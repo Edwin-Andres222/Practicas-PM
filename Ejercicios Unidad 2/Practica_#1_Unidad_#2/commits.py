@@ -10,13 +10,13 @@ print(conexion)
 try:
     conexion.autocommit=False
     cursor = conexion.cursor()
-    sentencia = "INSERT INTO cliente(nombre,apellido,email) Values(%s,%s,%s)"
+    sentencia = "INSERT INTO Persona(nombre,apellido,email) Values(%s,%s,%s)"
     nombre ='Juan'
-    valores = (nombre,'Perez','jperez@gmail.com')
+    valores = (3,nombre,'Perez','jperez@gmail.com')
     
     cursor.execute(sentencia,valores)
     log.debug("Sentencia Insert")
-    sentencia = "UPDATE cliente SET nombre=%s , apellido=%s, email=%s WHERE id_usuario=%s"
+    sentencia = "UPDATE Persona SET nombre=%s , apellido=%s, email=%s WHERE id_usuario=%s"
     valores=("Hugo","sanchez","hsanchez@mail.com",1)
     cursor.execute(sentencia,valores)
     log.debug("Sentencia Update")
@@ -30,13 +30,13 @@ except Exception as e:
 try:
     conexion.autocommit=False
     cursor = conexion.cursor()
-    sentencia = "INSERT INTO cliente(nombre,apellido,email) Values(%s,%s,%s)"
+    sentencia = "INSERT INTO Persona(nombre,apellido,email) Values(%s,%s,%s)"
     nombre ='Juan'
     valores = (nombre,'Perez','jperez@gmail.com')
     
     cursor.execute(sentencia,valores)
     log.debug("Sentencia Insert")
-    sentencia = "UPDATE cliente SET nombre=%s , apellido=%s, email=%s WHERE id_usuario=%s"
+    sentencia = "UPDATE Persona SET nombre=%s , apellido=%s, email=%s WHERE id_usuario=%s"
     valores=("Hugo","sanchez","hsanchez@mail.com",1)
     cursor.execute(sentencia,valores)
     log.debug("Sentencia Update")

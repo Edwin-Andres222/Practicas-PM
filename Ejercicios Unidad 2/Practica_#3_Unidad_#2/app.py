@@ -3,15 +3,15 @@ from flask_migrate import Migrate
 from database import db
 import logging
 from config import BasicConfig
-from routes.cemento.cemento import appCemento
-from routes.cheetos.cheetos import appCheetos
-from routes.dulces.dulces import appDulces, appDulces2
+from routes.Ron.Ron import appRon
+from routes.Sidras.Sidras import appSidras
+from routes.Vinos.Vinos import appVinos, appVinos2
 
 app = Flask(__name__)
-app.register_blueprint(appCemento)
-app.register_blueprint(appCheetos)
-app.register_blueprint(appDulces)
-app.register_blueprint(appDulces2)
+app.register_blueprint(appRon)
+app.register_blueprint(appSidras)
+app.register_blueprint(appVinos)
+app.register_blueprint(appVinos2)
 app.config.from_object(BasicConfig)
 db.init_app(app)
 migrate = Migrate()

@@ -7,44 +7,44 @@ appVinos = Blueprint('appVinos',__name__,template_folder='templates')
 
 @appVinos.route('/indexd')
 def inicio():
-    Vinos = Vinos.query.all()
-    totalVinoss = Vinos.query.count()
-    return render_template('indexd.html',Vinos = Vinos, totalVinoss = totalVinoss)
+    vinos = vinos.query.all()
+    totalVinoss = vinos.query.count()
+    return render_template('indexd.html',vinos = vinos, totalVinoss = totalVinoss)
 
 @appVinos.route('/agregard', methods=["GET","POST"])
 def agregar():
-    Vinos = Vinos()
-    VinosForm = VinoForm(obj=Vinos)
+    vinos = Vinos()
+    vinosForm = VinoForm(obj=vinos)
     if request.method == "POST":
-        if VinosForm.validate_on_submit():
-            VinosForm.populate_obj(Vinos)
-            db.session.add(Vinos)
+        if vinosForm.validate_on_submit():
+            vinosForm.populate_obj(vinos)
+            db.session.add(vinos)
             db.session.commit()
             return redirect(url_for('appVinos.inicio'))
-    return render_template('agregard.html',forma=VinosForm)
+    return render_template('agregard.html',forma=vinosForm)
 
 @appVinos.route('/editard/<int:id>', methods=["GET","POST"])
 def editar(id):
-    Vinos = Vinos.query.get_or_404(id)
-    VinosForm = VinoForm(obj=Vinos)
+    vinos = vinos.query.get_or_404(id)
+    vinosForm = VinoForm(obj=vinos)
     if request.method == "POST":
-        if VinosForm.validate_on_submit():
-            VinosForm.populate_obj(Vinos)
-            db.session.add(Vinos)
+        if vinosForm.validate_on_submit():
+            vinosForm.populate_obj(vinos)
+            db.session.add(vinos)
             db.session.commit()
             return redirect(url_for('appVinos.inicio'))
-    return render_template('editard.html',forma=VinosForm)
+    return render_template('editard.html',forma=vinosForm)
 
 
 @appVinos.route('/detalled/<int:id>')
 def detalle(id):
-    dulce = Vinos.query.get_or_404(id)
-    return render_template('detalled.html',dulce = dulce)
+    vinos = vinos.query.get_or_404(id)
+    return render_template('detalled.html',vinos = vinos)
 
 @appVinos.route('/eliminard/<int:id>')
 def eliminar(id):
-    Vinos = Vinos.query.get_or_404(id)
-    db.session.delete(Vinos)
+    vinos = vinos.query.get_or_404(id)
+    db.session.delete(vinos)
     db.session.commit()
     return redirect(url_for('appVinos.inicio'))
 
@@ -57,11 +57,11 @@ appVinos2 = Blueprint('appVinos2',__name__,template_folder="templates")
 def agregarCheetos():
     try:
         json = request.get_json()
-        Vinos = Vinos()
-        Vinos.Nombre = json['Nombre']
-        Vinos.Precio = json['Precio']
-        Vinos.Marca = json['Marca']
-        db.session.add(Vinos)
+        vinos = Vinos()
+        vinos.Nombre = json['Nombre']
+        vinos.Precio = json['Precio']
+        vinos.Marca = json['Marca']
+        db.session.add(vinos)
         db.session.commit()
         return jsonify({"status":200, "mensaje":"Vinos agregado"})
     except Exception as ex:
@@ -71,10 +71,10 @@ def agregarCheetos():
 def editarVinos():
     try:
         json = request.get_json()
-        Vinos = Vinos.query.get_or_404(json['id'])
-        Vinos.Nombre = json['Nombre']
-        Vinos.Precio = json['Precio']
-        Vinos.Marca = json['Marca']
+        vinos = vinos.query.get_or_404(json['id'])
+        vinos.Nombre = json['Nombre']
+        vinos.Precio = json['Precio']
+        vinos.Marca = json['Marca']
         db.session.commit()
         return jsonify({'status':"OK",'mensaje':"Vinos modificado"})
     except Exception as ex:
@@ -84,8 +84,8 @@ def editarVinos():
 def eliminarVinos():
     try:
         json = request.get_json()
-        Vinos = Vinos.query.get_or_404(json['id'])
-        db.session.delete(Vinos)
+        vinos = vinos.query.get_or_404(json['id'])
+        db.session.delete(vinos)
         db.session.commit()
         return jsonify({'status':"OK",'mensaje':"Vinos eliminado"})
     except Exception as ex:
@@ -93,14 +93,14 @@ def eliminarVinos():
 
 @appVinos2.route('/Vinos/obtener',methods={"GET"})
 def obtenerVinos():
-    Vinos = Vinos.query.all()
+    vinos = vinos.query.all()
     listaVinos=[]
-    for p in Vinos:
-        Vinos = {}
-        Vinos["Nombre"] = p.Nombre
-        Vinos["Precio"] = p.Precio
-        Vinos["Marca"] = p.Marca
-        listaVinos.append(Vinos)
+    for p in vinos:
+        vinos = {}
+        vinos["Nombre"] = p.Nombre
+        vinos["Precio"] = p.Precio
+        vinos["Marca"] = p.Marca
+        listaVinos.append(vinos)
     return jsonify({'Vinos':listaVinos})
 
     
