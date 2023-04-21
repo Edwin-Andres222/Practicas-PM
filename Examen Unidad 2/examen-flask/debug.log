@@ -1,0 +1,184 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\routes\videojuegos\videojuego.py", line 20, in inicio
+    return render_template('index.html', videoj = videoj, totalDevideoj = totalDevideoj)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\templating.py", line 130, in _render
+    rv = template.render(context)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\routes\videojuegos\templates\index.html", line 16, in top-level template code
+    <a href="{{url_for('appLibro.inicioLibro')}}">Ver Libros</a>
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 2034, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 2023, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\werkzeug\routing\map.py", line 917, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'appLibro.inicioLibro'. Did you mean 'appVideoJuego.inicio' instead?
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:54:29] "[35m[1mGET / HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:54:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+ERROR:app:Exception on /index [GET]
+Traceback (most recent call last):
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\routes\videojuegos\videojuego.py", line 20, in inicio
+    return render_template('index.html', videoj = videoj, totalDevideoj = totalDevideoj)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\templating.py", line 130, in _render
+    rv = template.render(context)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\routes\videojuegos\templates\index.html", line 16, in top-level template code
+    <a href="{{url_for('appLibro.inicioLibro')}}">Ver Libros</a>
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 2034, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 2023, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\werkzeug\routing\map.py", line 917, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'appLibro.inicioLibro'. Did you mean 'appVideoJuego.inicio' instead?
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:54:38] "[35m[1mGET /index HTTP/1.1[0m" 500 -
+ERROR:app:Exception on /index [GET]
+Traceback (most recent call last):
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\routes\videojuegos\videojuego.py", line 20, in inicio
+    return render_template('index.html', videoj = videoj, totalDevideoj = totalDevideoj)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\templating.py", line 130, in _render
+    rv = template.render(context)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\routes\videojuegos\templates\index.html", line 16, in top-level template code
+    <a href="{{url_for('appLibro.inicioLibro')}}">Ver Libros</a>
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 2034, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 2023, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\werkzeug\routing\map.py", line 917, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'appLibro.inicioLibro'. Did you mean 'appVideoJuego.inicio' instead?
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:54:41] "[35m[1mGET /index HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:56:01] "[33mGET /routes/templates/index HTTP/1.1[0m" 404 -
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\routes\videojuegos\videojuego.py", line 20, in inicio
+    return render_template('index.html', videoj = videoj, totalDevideoj = totalDevideoj)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\templating.py", line 130, in _render
+    rv = template.render(context)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\routes\videojuegos\templates\index.html", line 16, in top-level template code
+    <a href="{{url_for('appLibro.inicioLibro')}}">Ver Libros</a>
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 2034, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 2023, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\werkzeug\routing\map.py", line 917, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'appLibro.inicioLibro'. Did you mean 'appVideoJuego.inicio' instead?
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:56:06] "[35m[1mGET / HTTP/1.1[0m" 500 -
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\routes\videojuegos\videojuego.py", line 20, in inicio
+    return render_template('index.html', videoj = videoj, totalDevideoj = totalDevideoj)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\templating.py", line 130, in _render
+    rv = template.render(context)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\routes\videojuegos\templates\index.html", line 16, in top-level template code
+    <a href="{{url_for('appLibro.inicioLibro')}}">Ver Libros</a>
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 2034, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\flask\app.py", line 2023, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+  File "C:\Users\Edwin\OneDrive\Documentos\Clases\Programacion Multiparadigma\Practicas-PM\Examen Unidad 2\examen-flask\.venv\lib\site-packages\werkzeug\routing\map.py", line 917, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'appLibro.inicioLibro'. Did you mean 'appVideoJuego.inicio' instead?
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:56:21] "[35m[1mGET / HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:56:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:58:28] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:58:28] "[33mGET /static/estilo.css HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:58:35] "GET /agregar HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:58:35] "[33mGET /static/estilo.css HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:58:47] "[32mPOST /agregar HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:58:47] "GET /minecraft HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:58:47] "[33mGET /static/estilo.css HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:58:50] "GET /agregar HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:58:50] "[33mGET /static/estilo.css HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:59:01] "[32mPOST /agregar HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:59:01] "GET /minecraft HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:59:01] "[33mGET /static/estilo.css HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:59:03] "GET /agregar HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:59:03] "[33mGET /static/estilo.css HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:59:23] "[32mPOST /agregar HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:59:23] "GET /minecraft HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:59:23] "[33mGET /static/estilo.css HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:59:38] "GET /editar/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:59:38] "[33mGET /editar/static/estilo.css HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:59:45] "[32mPOST /editar/1 HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:59:45] "GET /minecraft HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:59:45] "[33mGET /static/estilo.css HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:59:55] "[32mGET /eliminar/2 HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:59:55] "GET /minecraft HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Apr/2023 07:59:55] "[33mGET /static/estilo.css HTTP/1.1[0m" 404 -
